@@ -15,7 +15,6 @@
     }
     .wrap { max-width: 720px; margin: 0 auto; }
 
-    /* Логика переключения страниц без JS */
     .page { display: none; }
     #home { display: block; }
     .page:target { display: block; }
@@ -66,23 +65,35 @@
       background: #171a23;
       border: 1px solid #2b3142;
       border-radius: 16px;
-      padding: 22px 18px;
+      padding: 20px 18px;
     }
-    .back {
-      display: inline-block;
-      color: #e8b945;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 16px;
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
     }
     .era {
       font-size: 12px;
       color: #e8b945;
       text-transform: uppercase;
       font-weight: 700;
-      margin-bottom: 6px;
     }
+    .close-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #232838;
+      color: #f4f4f6;
+      border: 1px solid #353d52;
+      padding: 6px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .close-btn:hover { border-color: #e8b945; color: #e8b945; }
+
     .title {
       font-size: 19px;
       font-weight: 700;
@@ -120,6 +131,7 @@
     .opt.ok .let { background: #2ecc71; color: #0b1911; }
     .opt.bad { background: rgba(220, 53, 69, 0.28); border-color: #ff6b6b; }
     .opt.bad .let { background: #ff6b6b; color: #1f0a0c; }
+    .opt.dim { opacity: 0.55; }
 
     .note {
       background: #10131a;
@@ -155,11 +167,10 @@
 <body>
 <div class="wrap">
 
-  <!-- ГЛАВНАЯ СТРАНИЦА СО СПИСКОМ ВСЕХ 20 ВОПРОСОВ -->
   <div id="home">
     <div class="header">
       <h1>Киноквиз: <span>Кинематограф России</span></h1>
-      <p>Нажмите на любой из 20 вопросов, чтобы открыть его и выбрать ответ.</p>
+      <p>Нажмите на любой из 20 вопросов, чтобы открыть его и выбрать один из 4 вариантов ответа.</p>
     </div>
     <div class="q-list">
       <a href="#q1" class="q-link"><div class="q-left"><span class="q-num">1</span><span class="q-name">Где и когда состоялся первый публичный киносеанс в России?</span></div><span class="q-go">Открыть →</span></a>
@@ -187,9 +198,6 @@
 
   <!-- ВОПРОС 1 -->
   <div id="q1" class="page"><div class="card">
-    <a href="#home" class="back">← Ко всем вопросам</a>
-    <div class="era">Вопрос 1 из 20 · Зарождение российского кино</div>
+    <div class="card-top"><span class="era">Вопрос 1 из 20</span><a href="#home" class="close-btn">✕ Закрыть</a></div>
     <div class="title">Где и когда состоялся первый публичный киносеанс в России?</div>
     <div class="opts">
-      <a href="#q1-ok" class="opt"><span class="let">А</span><span>16 мая 1896 года в петербургском саду «Аквариум»</span></a>
-      <a href="#q1-bad" class="opt"><span class="let">Б</span><span>28 декабря 1895 года в московском театре «Эрмитаж»</span></a>
