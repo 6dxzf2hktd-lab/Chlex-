@@ -60,7 +60,7 @@ const Q=[
 ];
 const L=["А","Б","В","Г"],app=document.getElementById("app"),ans={};
 function list(){
-  let h=`<div class="box"><h1>Киноквиз: <span>Кинематограф России</span></h1><p class="sub">Нажмите на любой из 20 вопросов, чтобы открыть его и выбрать ответ.</p></div>`;
+  let h=`<div class="box"><h1>Киноквиз: <span>Кинематограф России</span></h1><p class="sub">Нажмите на любой из 20 вопросов, чтобы открыть его и выбрать ответ. Иконников, Смолин; КБс-11</p></div>`;
   Q.forEach((x,idx)=>{
     const st=ans[idx]!==undefined?(ans[idx]===x.c?"✓ Верно":"✕ Ошибка"):"Открыть →";
     h+=`<div class="item" onclick="openQ(${idx})"><div style="display:flex;align-items:center"><span class="num">${idx+1}</span><span class="qtxt">${x.q}</span></div><span class="go">${st}</span></div>`;
